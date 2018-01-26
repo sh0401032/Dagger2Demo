@@ -6,4 +6,8 @@ package com.huan.dagger2demo.base;
 
 public interface BasePresenter {
 
+    void attachView(BaseView view);
+
+    void detachView();
+
 }

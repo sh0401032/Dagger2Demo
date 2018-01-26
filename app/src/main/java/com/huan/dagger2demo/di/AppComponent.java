@@ -1,10 +1,11 @@
 package com.huan.dagger2demo.di;
 
 import com.huan.dagger2demo.MyApplication;
-import com.huan.dagger2demo.di.module.AppModule;
+import com.huan.dagger2demo.di.module.HomeModule;
 
 import javax.inject.Singleton;
 
+import dagger.BindsInstance;
 import dagger.Component;
 import dagger.android.AndroidInjector;
 import dagger.android.support.AndroidSupportInjectionModule;
@@ -14,14 +15,22 @@ import dagger.android.support.AndroidSupportInjectionModule;
  */
 @Singleton
 @Component(modules = {
+        // 通用module
         AndroidSupportInjectionModule.class,
         AppModule.class,
-        AllActivityModule.class
+
+        // 各Module
+        HomeModule.class
+
 })
 interface AppComponent extends AndroidInjector<MyApplication> {
 
     @Component.Builder
-    abstract class Builder extends AndroidInjector.Builder<MyApplication> {
+    interface Builder {
+        @BindsInstance
+        AppComponent.Builder application(MyApplication application);
+
+        AppComponent build();
     }
 
 }

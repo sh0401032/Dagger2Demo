@@ -1,5 +1,5 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-
+apply from:rootProject.file('dependence.gradle')
 buildscript {
     
     repositories {
@@ -19,9 +19,19 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url "https://jitpack.io" }
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+ext {
+    appCompileSdkVersion = 26
+    appBuildToolsVersion = "26.0.1"
+    appMinSdkVersion = 16
+    appTargetSdkVersion = 26
+
+
 }

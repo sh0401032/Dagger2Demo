@@ -1,38 +1,94 @@
 package com.huan.dagger2demo;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.view.MenuItem;
+import android.widget.FrameLayout;
 
 import com.huan.dagger2demo.base.BaseActivity;
-import com.huan.dagger2demo.di.test.DaggerTest;
-import com.huan.dagger2demo.di.test.DaggerTest2;
+import com.huan.dagger2demo.gankio.GankIoFragment;
+import com.huan.dagger2demo.home.HomeFragment;
 
-import javax.inject.Inject;
+import butterknife.BindView;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements OnOpenDrawerLayoutListener {
 
-    @Inject
-    DaggerTest2 daggerTest2;
+    @BindView(R.id.dl_root)
+    DrawerLayout dlRoot;
 
-    @Inject
-    DaggerTest daggerTest;
+    @BindView(R.id.fl_container)
+    FrameLayout flContainer;
+
+    @BindView(R.id.nav_left)
+    NavigationView navLeft;
+
+    @BindView(R.id.nav_bottom)
+    BottomNavigationView navBottom;
+
+    private HomeFragment homeFragment;
+    private GankIoFragment gankFragment;
+
+    private Fragment mCurrentFragment;
+    private Fragment mShowFragment;
+    private FragmentManager fragmentManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        fragmentManager = getSupportFragmentManager();
 
-        Log.d("Main", "daggertest=" + daggerTest + ";daggertest2=" + daggerTest2);
-        Button bt = (Button) findViewById(R.id.bt_test_activity);
-        bt.setOnClickListener(new View.OnClickListener() {
+
+        navBottom.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, TestActivity.class);
-                startActivity(intent);
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int itemId = item.getItemId();
+                switch (itemId) {
+                    case R.id.menu_item_home:
+                        if (homeFragment == null) {
+                            FragmentTransaction transaction = fragmentManager.beginTransaction();
+                            homeFragment = HomeFragment.newInstance();
+                            transaction.add(flContainer.getId(), homeFragment, HomeFragment.class.getName());
+                            transaction.commitNowAllowingStateLoss();
+                        }
+                        mShowFragment = homeFragment;
+                        break;
+                    case R.id.menu_item_gank_io:
+                        if (gankFragment == null) {
+                            FragmentTransaction transaction = fragmentManager.beginTransaction();
+                            gankFragment = GankIoFragment.newInstance();
+                            transaction.add(flContainer.getId(), gankFragment, GankIoFragment.class.getName());
+                            transaction.commitNowAllowingStateLoss();
+                        }
+                        mShowFragment = gankFragment;
+                        break;
+                }
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                if (mCurrentFragment != null) {
+                    transaction.hide(mCurrentFragment);
+                }
+                transaction.show(mShowFragment);
+                transaction.commitNowAllowingStateLoss();
+                mCurrentFragment = mShowFragment;
+                return true;
             }
         });
+        navBottom.setSelectedItemId(R.id.menu_item_home);
+    }
+
+
+    @Override
+    public void openDrawer() {
+        if (!dlRoot.isDrawerOpen(GravityCompat.START)) {
+            dlRoot.openDrawer(GravityCompat.START);
+        }
     }
 }
