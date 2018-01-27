@@ -1,6 +1,7 @@
 package com.huan.dagger2demo.di.module;
 
 import com.huan.dagger2demo.gankio.GankIoCategoryFragment;
+import com.huan.dagger2demo.gankio.GankIoDayFragment;
 import com.huan.dagger2demo.gankio.GankIoFragment;
 import com.huan.dagger2demo.gankio.GankModule;
 import com.huan.dagger2demo.home.HomeFragment;
@@ -39,6 +40,9 @@ public abstract class BindFragmentModule {
 
     @ContributesAndroidInjector(modules = {GankModule.class})
     abstract GankIoCategoryFragment contributesGankIoCategoryFragmentInjector();
+
+    @ContributesAndroidInjector(modules = {GankModule.class})
+    abstract GankIoDayFragment contributesGankIoDayFragmentInjector();
 
 
 }

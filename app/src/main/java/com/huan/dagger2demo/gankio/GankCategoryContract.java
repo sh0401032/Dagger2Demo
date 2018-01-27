@@ -20,13 +20,10 @@ public interface GankCategoryContract {
     interface IGankCategoryPresenter extends BasePresenter {
         void getGankIoCustomList(String type, int prePage, int page);
 
-        void getGankIoDay(String year, String month, String day);
-
         void getGankIoWelfareList(int pre_page, int page);
     }
 
     interface IGankCategoryView extends BaseView {
-        void showGankIoDay(List<GankIoDayItem> gankIoDayList);
 
         void showGankIoWelfareList(List<GankIoWelfareItem> gankIoWelfareList);
 

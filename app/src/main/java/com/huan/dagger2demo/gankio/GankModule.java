@@ -22,4 +22,9 @@ public class GankModule {
         return new GankCategoryPresenter(gankIoService);
     }
 
+    @Provides
+    GankIoDayContract.IGankIoDayPresenter provideGankIoDayPresenter(GankIoService gankIoService) {
+        return new GankIoDayPresenter(gankIoService);
+    }
+
 }

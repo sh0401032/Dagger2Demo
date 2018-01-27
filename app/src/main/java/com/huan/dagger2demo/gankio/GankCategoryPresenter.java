@@ -9,9 +9,16 @@ import com.huan.common.sdk.api.service.GankIoService;
 import com.huan.dagger2demo.base.BaseView;
 import com.huan.dagger2demo.gankio.GankCategoryContract.IGankCategoryPresenter;
 
-import java.util.ArrayList;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import io.reactivex.Observable;
+import io.reactivex.ObservableSource;
+import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import timber.log.Timber;
 
@@ -25,6 +32,8 @@ public class GankCategoryPresenter implements IGankCategoryPresenter {
     private final GankIoService mGankService;
 
     private GankCategoryContract.IGankCategoryView categoryView;
+
+
 
     public GankCategoryPresenter(GankIoService gankIoService) {
         mGankService = gankIoService;
@@ -55,31 +64,6 @@ public class GankCategoryPresenter implements IGankCategoryPresenter {
                         Timber.d("gankIoCustomList");
                         if (categoryView != null && gankIoCustomList != null) {
                             categoryView.showGankIoCustomList(gankIoCustomList.getResults());
-                        }
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-
-                    }
-                });
-    }
-
-    @Override
-    public void getGankIoDay(String year, String month, String day) {
-        mGankService.getGankIoDay(year, month, day)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new ObserverAdapter<GankIoDay>() {
-                    @Override
-                    public void onNext(GankIoDay gankIoDay) {
-                        super.onNext(gankIoDay);
-                        Timber.d("gankIoDay");
-                        if (categoryView != null && gankIoDay != null) {
-                            ArrayList<GankIoDayItem> list = new ArrayList<>();
-                            list.addAll(gankIoDay.getResults().getAndroid());
-                            list.addAll(gankIoDay.getResults().getApp());
-                            categoryView.showGankIoDay(list);
                         }
                     }
 

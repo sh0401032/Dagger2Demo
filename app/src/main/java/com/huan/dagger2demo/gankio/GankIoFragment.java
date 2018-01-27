@@ -104,7 +104,11 @@ public class GankIoFragment extends BaseFragment implements GankIoContract.IGank
         // 显示所有分类
         for (int i = 0; i < categoryList.size(); i++) {
             tabLayout.addTab(tabLayout.newTab().setText(categoryList.get(i)));
-            fragments.add(GankIoCategoryFragment.newInstance(categoryList.get(i)));
+            if ("每日推荐".equals(categoryList.get(i))) {
+                fragments.add(GankIoDayFragment.newInstance(categoryList.get(i)));
+            } else {
+                fragments.add(GankIoCategoryFragment.newInstance(categoryList.get(i)));
+            }
         }
         fragmentAdapter = new FragmentAdapter(getChildFragmentManager(), fragments);
         viewPager.setAdapter(fragmentAdapter);
