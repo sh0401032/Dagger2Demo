@@ -14,7 +14,8 @@ import android.widget.FrameLayout;
 
 import com.huan.dagger2demo.base.BaseActivity;
 import com.huan.dagger2demo.gankio.GankIoFragment;
-import com.huan.dagger2demo.home.HomeFragment;
+import com.huan.dagger2demo.zhihu.ZhiHuHomeFragment;
+import com.huan.dagger2demo.wanandroid.WanAndroidFragment;
 
 import butterknife.BindView;
 
@@ -32,8 +33,9 @@ public class MainActivity extends BaseActivity implements OnOpenDrawerLayoutList
     @BindView(R.id.nav_bottom)
     BottomNavigationView navBottom;
 
-    private HomeFragment homeFragment;
+    private ZhiHuHomeFragment zhiHuHomeFragment;
     private GankIoFragment gankFragment;
+    private WanAndroidFragment androidFragment;
 
     private Fragment mCurrentFragment;
     private Fragment mShowFragment;
@@ -45,21 +47,19 @@ public class MainActivity extends BaseActivity implements OnOpenDrawerLayoutList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         fragmentManager = getSupportFragmentManager();
-
-
         navBottom.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int itemId = item.getItemId();
                 switch (itemId) {
                     case R.id.menu_item_home:
-                        if (homeFragment == null) {
+                        if (zhiHuHomeFragment == null) {
                             FragmentTransaction transaction = fragmentManager.beginTransaction();
-                            homeFragment = HomeFragment.newInstance();
-                            transaction.add(flContainer.getId(), homeFragment, HomeFragment.class.getName());
+                            zhiHuHomeFragment = ZhiHuHomeFragment.newInstance();
+                            transaction.add(flContainer.getId(), zhiHuHomeFragment, ZhiHuHomeFragment.class.getName());
                             transaction.commitNowAllowingStateLoss();
                         }
-                        mShowFragment = homeFragment;
+                        mShowFragment = zhiHuHomeFragment;
                         break;
                     case R.id.menu_item_gank_io:
                         if (gankFragment == null) {
@@ -69,6 +69,15 @@ public class MainActivity extends BaseActivity implements OnOpenDrawerLayoutList
                             transaction.commitNowAllowingStateLoss();
                         }
                         mShowFragment = gankFragment;
+                        break;
+                    case R.id.menu_item_wan_android:
+                        if (androidFragment == null) {
+                            FragmentTransaction transaction = fragmentManager.beginTransaction();
+                            androidFragment = WanAndroidFragment.newInstance();
+                            transaction.add(flContainer.getId(), androidFragment, WanAndroidFragment.class.getName());
+                            transaction.commitNowAllowingStateLoss();
+                        }
+                        mShowFragment = androidFragment;
                         break;
                 }
                 FragmentTransaction transaction = fragmentManager.beginTransaction();

@@ -4,12 +4,13 @@ import com.huan.dagger2demo.gankio.GankIoCategoryFragment;
 import com.huan.dagger2demo.gankio.GankIoDayFragment;
 import com.huan.dagger2demo.gankio.GankIoFragment;
 import com.huan.dagger2demo.gankio.GankModule;
-import com.huan.dagger2demo.home.HomeFragment;
-import com.huan.dagger2demo.home.HomeFragmentModule;
-import com.huan.dagger2demo.home.fragment.ReDianFragment;
-import com.huan.dagger2demo.home.fragment.TestFragment;
-import com.huan.dagger2demo.home.fragment.WeiXinFragment;
-import com.huan.dagger2demo.home.zhihu.ZhiHuFragment;
+import com.huan.dagger2demo.zhihu.ZhiHuHomeFragment;
+import com.huan.dagger2demo.zhihu.HomeFragmentModule;
+import com.huan.dagger2demo.zhihu.fragment.ReDianFragment;
+import com.huan.dagger2demo.zhihu.fragment.TestFragment;
+import com.huan.dagger2demo.zhihu.fragment.WeiXinFragment;
+import com.huan.dagger2demo.zhihu.zhihu.ZhiHuFragment;
+import com.huan.dagger2demo.wanandroid.WanAndroidFragment;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -21,7 +22,7 @@ import dagger.android.ContributesAndroidInjector;
 public abstract class BindFragmentModule {
 
     @ContributesAndroidInjector(modules = {HomeFragmentModule.class})
-    abstract HomeFragment contributesHomeFragmentInjector();
+    abstract ZhiHuHomeFragment contributesHomeFragmentInjector();
 
     @ContributesAndroidInjector(modules = {})
     abstract TestFragment contributesTestFragmentInjector();
@@ -43,6 +44,9 @@ public abstract class BindFragmentModule {
 
     @ContributesAndroidInjector(modules = {GankModule.class})
     abstract GankIoDayFragment contributesGankIoDayFragmentInjector();
+
+    @ContributesAndroidInjector(modules = {})
+    abstract WanAndroidFragment contributesWanAndroidFragmentInjector();
 
 
 }

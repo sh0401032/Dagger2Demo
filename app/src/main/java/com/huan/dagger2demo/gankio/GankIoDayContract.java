@@ -1,8 +1,6 @@
 package com.huan.dagger2demo.gankio;
 
-import com.huan.common.sdk.api.bean.GankIoCustomItem;
-import com.huan.common.sdk.api.bean.GankIoDayItem;
-import com.huan.common.sdk.api.bean.GankIoWelfareItem;
+import com.huan.common.sdk.api.gankio.bean.GankIoDayItem;
 import com.huan.dagger2demo.base.BasePresenter;
 import com.huan.dagger2demo.base.BaseView;
 

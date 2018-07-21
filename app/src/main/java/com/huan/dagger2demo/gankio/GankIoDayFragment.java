@@ -11,9 +11,9 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.huan.common.sdk.api.bean.GankIoDayItem;
+import com.huan.common.sdk.api.gankio.bean.GankIoDayItem;
 import com.huan.dagger2demo.R;
-import com.huan.dagger2demo.base.BaseViewPagerFragment;
+import com.huan.dagger2demo.base.BaseViewPagerDaggerFragment;
 import com.huan.dagger2demo.gankio.adapter.GankCategoryDayAdapter;
 
 import java.util.List;
@@ -27,7 +27,7 @@ import timber.log.Timber;
  * Created by H_S on 2018/1/22.
  */
 
-public class GankIoDayFragment extends BaseViewPagerFragment implements GankIoDayContract.IGankIoDayView, SwipeRefreshLayout.OnRefreshListener {
+public class GankIoDayFragment extends BaseViewPagerDaggerFragment implements GankIoDayContract.IGankIoDayView, SwipeRefreshLayout.OnRefreshListener {
 
     public final static String CATEGORY = "category";
 

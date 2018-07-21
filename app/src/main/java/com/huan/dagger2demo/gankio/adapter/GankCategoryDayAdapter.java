@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.huan.common.sdk.api.bean.GankIoDayItem;
+import com.huan.common.sdk.api.gankio.bean.GankIoDayItem;
 import com.huan.dagger2demo.R;
 
 import java.util.List;
@@ -77,7 +77,15 @@ public class GankCategoryDayAdapter extends BaseQuickAdapter<List<GankIoDayItem>
             RecyclerView recyclerView = (RecyclerView) view;
             recyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false));
             recyclerView.setAdapter(new GankDayItemAdapter(itemList));
-            new LinearSnapHelper().attachToRecyclerView(recyclerView);// 实现类似ViewPager效果
+
+            // recyclerView.setOnFlingListener(null);// SnapHelper实现了RecycleView.FlingListener接口,下拉刷新后重新创建该接口会报错
+            RecyclerView.OnFlingListener onFlingListener = recyclerView.getOnFlingListener();
+            if (onFlingListener == null) {
+                new LinearSnapHelper().attachToRecyclerView(recyclerView);// 实现类似ViewPager效果
+
+            }
         }
+
     }
 }
+

@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.huan.common.sdk.api.bean.GankIoCustomItem;
+import com.huan.common.sdk.api.gankio.bean.GankIoCustomItem;
 import com.huan.dagger2demo.R;
 
 import java.util.List;

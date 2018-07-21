@@ -12,13 +12,11 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.huan.common.sdk.api.bean.GankIoCustomItem;
-import com.huan.common.sdk.api.bean.GankIoDayItem;
-import com.huan.common.sdk.api.bean.GankIoWelfareItem;
+import com.huan.common.sdk.api.gankio.bean.GankIoCustomItem;
+import com.huan.common.sdk.api.gankio.bean.GankIoWelfareItem;
 import com.huan.dagger2demo.R;
-import com.huan.dagger2demo.base.BaseViewPagerFragment;
+import com.huan.dagger2demo.base.BaseViewPagerDaggerFragment;
 import com.huan.dagger2demo.gankio.adapter.GankCategoryCustomAdapter;
-import com.huan.dagger2demo.gankio.adapter.GankCategoryDayAdapter;
 import com.huan.dagger2demo.gankio.adapter.GankCategoryWelAdapter;
 
 import java.util.List;
@@ -32,7 +30,7 @@ import timber.log.Timber;
  * Created by H_S on 2018/1/22.
  */
 
-public class GankIoCategoryFragment extends BaseViewPagerFragment implements GankCategoryContract.IGankCategoryView, BaseQuickAdapter.RequestLoadMoreListener, SwipeRefreshLayout.OnRefreshListener {
+public class GankIoCategoryFragment extends BaseViewPagerDaggerFragment implements GankCategoryContract.IGankCategoryView, BaseQuickAdapter.RequestLoadMoreListener, SwipeRefreshLayout.OnRefreshListener {
 
     public final static String CATEGORY = "category";
 

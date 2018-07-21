@@ -1,24 +1,14 @@
 package com.huan.dagger2demo.gankio;
 
 import com.huan.common.sdk.api.ObserverAdapter;
-import com.huan.common.sdk.api.bean.GankIoCustomList;
-import com.huan.common.sdk.api.bean.GankIoDay;
-import com.huan.common.sdk.api.bean.GankIoDayItem;
-import com.huan.common.sdk.api.bean.GankIoWelfareList;
-import com.huan.common.sdk.api.service.GankIoService;
+import com.huan.common.sdk.api.gankio.bean.GankIoCustomList;
+import com.huan.common.sdk.api.gankio.bean.GankIoWelfareList;
+import com.huan.common.sdk.service.GankIoService;
 import com.huan.dagger2demo.base.BaseView;
 import com.huan.dagger2demo.gankio.GankCategoryContract.IGankCategoryPresenter;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
-import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
-import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import timber.log.Timber;
 

@@ -1,6 +1,6 @@
 package com.huan.dagger2demo.gankio;
 
-import com.huan.common.sdk.api.service.GankIoService;
+import com.huan.common.sdk.service.GankIoService;
 
 import dagger.Module;
 import dagger.Provides;

@@ -2,10 +2,11 @@ package com.huan.dagger2demo.di;
 
 import android.content.Context;
 
-import com.huan.common.sdk.api.service.GankIoService;
+import com.huan.common.sdk.service.AndroidService;
+import com.huan.common.sdk.service.GankIoService;
 import com.huan.dagger2demo.MyApplication;
-import com.huan.common.sdk.api.service.BaseService;
-import com.huan.common.sdk.api.service.ZhiHuService;
+import com.huan.common.sdk.service.BaseService;
+import com.huan.common.sdk.service.ZhiHuService;
 
 import javax.inject.Singleton;
 
@@ -37,6 +38,11 @@ public class AppModule {
     @Provides
     GankIoService provideGankIoService() {
         return GankIoService.getInstance();
+    }
+
+    @Provides
+    AndroidService provideAndroidService() {
+        return AndroidService.getInstance();
     }
 
 }

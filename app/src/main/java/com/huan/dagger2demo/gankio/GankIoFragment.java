@@ -12,8 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.huan.dagger2demo.R;
-import com.huan.dagger2demo.base.BaseFragment;
-import com.huan.dagger2demo.home.adapter.FragmentAdapter;
+import com.huan.dagger2demo.base.BaseDaggerFragment;
+import com.huan.dagger2demo.zhihu.adapter.FragmentAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +29,7 @@ import static android.support.design.widget.TabLayout.*;
  * Created by H_S on 2018/1/22.
  */
 
-public class GankIoFragment extends BaseFragment implements GankIoContract.IGankIoView {
+public class GankIoFragment extends BaseDaggerFragment implements GankIoContract.IGankIoView {
 
     private List<Fragment> fragments = new ArrayList<>();
 

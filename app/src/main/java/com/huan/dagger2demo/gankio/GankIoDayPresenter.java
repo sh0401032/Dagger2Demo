@@ -1,9 +1,9 @@
 package com.huan.dagger2demo.gankio;
 
 import com.huan.common.sdk.api.ObserverAdapter;
-import com.huan.common.sdk.api.bean.GankIoDay;
-import com.huan.common.sdk.api.bean.GankIoDayItem;
-import com.huan.common.sdk.api.service.GankIoService;
+import com.huan.common.sdk.api.gankio.bean.GankIoDay;
+import com.huan.common.sdk.api.gankio.bean.GankIoDayItem;
+import com.huan.common.sdk.service.GankIoService;
 import com.huan.dagger2demo.base.BaseView;
 
 import java.util.ArrayList;
@@ -49,6 +49,8 @@ public class GankIoDayPresenter implements GankIoDayContract.IGankIoDayPresenter
 
     @Override
     public void showCategoryFragment(String category){
+        //TODO 使用RxBus实现
+
 
     }
 

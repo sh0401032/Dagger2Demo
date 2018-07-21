@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.huan.common.sdk.api.bean.GankIoWelfareItem;
+import com.huan.common.sdk.api.gankio.bean.GankIoWelfareItem;
 import com.huan.dagger2demo.R;
 
 import java.util.List;
