@@ -34,7 +34,7 @@ public interface AndroidApiService {
      */
 
     @GET("/article/list/{page}/json")
-    Observable<HttpResult<List<Pager>>> getHomeList(@Path("page") int page);
+    Observable<HttpResult<Pager>> getHomeList(@Path("page") int page);
 
     /**
      * 首页Banner

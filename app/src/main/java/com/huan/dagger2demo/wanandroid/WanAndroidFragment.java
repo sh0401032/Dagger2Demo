@@ -13,9 +13,9 @@ import android.view.ViewGroup;
 
 import com.huan.dagger2demo.R;
 import com.huan.dagger2demo.base.BaseDaggerFragment;
-import com.huan.dagger2demo.zhihu.adapter.FragmentAdapter;
 import com.huan.dagger2demo.wanandroid.home.WanAndroidHomeFragment;
 import com.huan.dagger2demo.wanandroid.knowledge.WanAndroidKnowledgeFragment;
+import com.huan.dagger2demo.zhihu.adapter.FragmentAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

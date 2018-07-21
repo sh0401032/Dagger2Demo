@@ -49,6 +49,7 @@ public class GankIoCategoryFragment extends BaseViewPagerDaggerFragment implemen
     GankCategoryContract.IGankCategoryPresenter gankCategoryPresenter;
     private GankCategoryCustomAdapter customAdapter;
     private GankCategoryWelAdapter welAdapter;
+    private boolean hasInit;
 
 
     @Nullable
@@ -95,6 +96,7 @@ public class GankIoCategoryFragment extends BaseViewPagerDaggerFragment implemen
     public void onFragmentVisible(boolean isVisible) {
         super.onFragmentVisible(isVisible);
         if (isVisible) {
+            if (hasInit) return;
             initData();
         } else {
 
@@ -107,6 +109,7 @@ public class GankIoCategoryFragment extends BaseViewPagerDaggerFragment implemen
     private int custom_page = 1;
 
     private void initData() {
+        hasInit = true;
         if ("福利".equals(category)) {
             if (welAdapter == null || welAdapter.getData() == null)
                 gankCategoryPresenter.getGankIoWelfareList(pre_page, wel_page);

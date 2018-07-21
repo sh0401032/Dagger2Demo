@@ -50,6 +50,7 @@ public class GankIoDayFragment extends BaseViewPagerDaggerFragment implements Ga
     GankIoDayContract.IGankIoDayPresenter gankDayPresenter;
 
     private GankCategoryDayAdapter dayAdapter;
+    private boolean hasInit;
 
 
     @Nullable
@@ -96,6 +97,7 @@ public class GankIoDayFragment extends BaseViewPagerDaggerFragment implements Ga
     public void onFragmentVisible(boolean isVisible) {
         super.onFragmentVisible(isVisible);
         if (isVisible) {
+            if (hasInit) return;
             initData();
         } else {
 
@@ -104,7 +106,7 @@ public class GankIoDayFragment extends BaseViewPagerDaggerFragment implements Ga
     }
 
     private void initData() {
-
+        hasInit = false;
         if (dayAdapter == null || dayAdapter.getData() == null)
             gankDayPresenter.getGankIoDay(mYear, mMonth, mDay);
 

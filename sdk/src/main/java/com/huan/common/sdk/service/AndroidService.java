@@ -47,9 +47,9 @@ public class AndroidService {
      * @param page page
      */
 
-    public Observable<List<Pager>> getHomeList(int page) {
+    public Observable<Pager> getHomeList(int page) {
         return baseApiService.getHomeList(page)
-                .map(new HttpResultFunc<List<Pager>>())
+                .map(new HttpResultFunc<Pager>())
                 .subscribeOn(Schedulers.io());
     }
 

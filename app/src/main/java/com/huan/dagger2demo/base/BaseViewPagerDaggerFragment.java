@@ -13,15 +13,12 @@ public class BaseViewPagerDaggerFragment extends BaseDaggerFragment {
     protected View rootView;
     //当前Fragment是否处于可见状态标志，防止因ViewPager的缓存机制而导致回调函数的触发
     private boolean isFragmentVisible;
-    //是否是第一次开启网络加载
-    public boolean isViewCreated;
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         rootView = view;
-        isViewCreated = true;
-        if (isViewCreated && isFragmentVisible) {// 针对第一次加载时，setUserVisibleHint在onViewCreated之前调用
+        if (isFragmentVisible) {// 针对第一次加载时，setUserVisibleHint在onViewCreated之前调用
             onFragmentVisible(true);
         }
     }
@@ -43,7 +40,7 @@ public class BaseViewPagerDaggerFragment extends BaseDaggerFragment {
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
         isFragmentVisible = isVisibleToUser;
-        if (rootView == null || !isViewCreated) {
+        if (rootView == null) {
             return;
         }
         onFragmentVisible(isFragmentVisible);
@@ -52,6 +49,5 @@ public class BaseViewPagerDaggerFragment extends BaseDaggerFragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        isViewCreated = false;
     }
 }

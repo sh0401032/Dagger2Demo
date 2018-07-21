@@ -77,6 +77,6 @@
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/homeItemTitle"
         android:padding="@dimen/dp_10"
-        app:srcCompat="@drawable/ic_action_no_like"
+        android:src="@drawable/ic_action_no_like"
         tools:ignore="ContentDescription,VectorDrawableCompat"/>
 </RelativeLayout>

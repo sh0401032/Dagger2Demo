@@ -4,6 +4,8 @@ import com.huan.dagger2demo.gankio.GankIoCategoryFragment;
 import com.huan.dagger2demo.gankio.GankIoDayFragment;
 import com.huan.dagger2demo.gankio.GankIoFragment;
 import com.huan.dagger2demo.gankio.GankModule;
+import com.huan.dagger2demo.wanandroid.WanAndroidModule;
+import com.huan.dagger2demo.wanandroid.home.WanAndroidHomeFragment;
 import com.huan.dagger2demo.zhihu.ZhiHuHomeFragment;
 import com.huan.dagger2demo.zhihu.HomeFragmentModule;
 import com.huan.dagger2demo.zhihu.fragment.ReDianFragment;
@@ -47,6 +49,9 @@ public abstract class BindFragmentModule {
 
     @ContributesAndroidInjector(modules = {})
     abstract WanAndroidFragment contributesWanAndroidFragmentInjector();
+
+    @ContributesAndroidInjector(modules = {WanAndroidModule.class})
+    abstract WanAndroidHomeFragment contributesWanAndroidHomeFragmentInjector();
 
 
 }
