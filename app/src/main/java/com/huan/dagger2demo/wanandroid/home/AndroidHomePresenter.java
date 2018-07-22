@@ -41,38 +41,6 @@ public class AndroidHomePresenter implements WanAndroidHomeContract.IAndroidHome
     }
 
     @Override
-    public void getHomeBannerList() {
-        if (mAndroidService == null) return;
-        mAndroidService.getBannerList()
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<List<Banner>>() {
-                    @Override
-                    public void onSubscribe(Disposable d) {
-
-                    }
-
-                    @Override
-                    public void onNext(List<Banner> banners) {
-                        if (homeView != null) {
-                            homeView.showHomeBanner(banners);
-                        }
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        if (homeView != null) {
-                            homeView.showHomeBanner(null);
-                        }
-                    }
-
-                    @Override
-                    public void onComplete() {
-
-                    }
-                });
-    }
-
-    @Override
     public void getHomeList(int page) {
         if (mAndroidService == null) return;
         mAndroidService.getHomeList(page)
