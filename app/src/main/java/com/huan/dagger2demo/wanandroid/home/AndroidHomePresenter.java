@@ -6,6 +6,7 @@ import com.huan.common.sdk.api.wanandroid.bean.Banner;
 import com.huan.common.sdk.api.wanandroid.bean.Pager;
 import com.huan.common.sdk.service.AndroidService;
 import com.huan.dagger2demo.base.BaseView;
+import com.huan.dagger2demo.lifecycle.IBaseLifeCycle;
 
 import java.util.List;
 
@@ -70,5 +71,15 @@ public class AndroidHomePresenter implements WanAndroidHomeContract.IAndroidHome
 
                     }
                 });
+    }
+
+    @Override
+    public void onCreate() {
+        Timber.d("onCreate");
+    }
+
+    @Override
+    public void onDestroy() {
+        Timber.d("onDestroy");
     }
 }
