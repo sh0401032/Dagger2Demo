@@ -57,6 +57,7 @@ public class WanAndroidHomeFragment extends BaseViewPagerDaggerFragment implemen
         if (androidHomePresenter != null) {
             androidHomePresenter.attachView(this);
         }
+        getLifecycle().addObserver(androidHomePresenter);
         initView(view);
     }
 

@@ -24,6 +24,11 @@ def dependences = [
         glideTransformations        : 'jp.wasabeef:glide-transformations:2.0.1',
 
         picasso                     : 'com.squareup.picasso:picasso:2.71828'
+        glideTransformations        : 'jp.wasabeef:glide-transformations:2.0.1',
+
+        // lifecycle
+        lifecycleExtension          : 'android.arch.lifecycle:extensions:1.1.1',
+
 
 ]
 
