@@ -3,7 +3,7 @@ package com.huan.dagger2demo.zhihu.zhihu;
 import android.util.Log;
 
 import com.huan.dagger2demo.base.BaseView;
-import com.huan.common.sdk.api.ObserverAdapter;
+import com.huan.common.sdk.library.http.ObserverAdapter;
 import com.huan.common.sdk.api.zhihu.bean.ZhiHuDailyList;
 import com.huan.common.sdk.service.ZhiHuService;
 

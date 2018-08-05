@@ -1,6 +1,6 @@
 package com.huan.common.sdk.api.base;
 
-import com.huan.common.sdk.api.HttpResult;
+import com.huan.common.sdk.library.http.HttpResult;
 import com.huan.common.sdk.api.base.bean.HomeTab;
 
 import java.util.List;

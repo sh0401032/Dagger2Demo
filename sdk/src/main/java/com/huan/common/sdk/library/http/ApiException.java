@@ -1,4 +1,4 @@
-package com.huan.common.sdk.api;
+package com.huan.common.sdk.library.http;
 
 /**
  * Created by H_S on 2018/1/15.

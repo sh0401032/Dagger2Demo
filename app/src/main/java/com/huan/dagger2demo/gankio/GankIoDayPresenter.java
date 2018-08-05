@@ -1,6 +1,6 @@
 package com.huan.dagger2demo.gankio;
 
-import com.huan.common.sdk.api.ObserverAdapter;
+import com.huan.common.sdk.library.http.ObserverAdapter;
 import com.huan.common.sdk.api.gankio.bean.GankIoDay;
 import com.huan.common.sdk.api.gankio.bean.GankIoDayItem;
 import com.huan.common.sdk.service.GankIoService;

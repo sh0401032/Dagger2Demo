@@ -1,6 +1,6 @@
 package com.huan.common.sdk.service;
 
-import com.huan.common.sdk.api.HttpClientHelper;
+import com.huan.common.sdk.library.http.HttpClientHelper;
 import com.huan.common.sdk.api.gankio.bean.GankIoCustomList;
 import com.huan.common.sdk.api.gankio.bean.GankIoDay;
 import com.huan.common.sdk.api.gankio.bean.GankIoWelfareList;

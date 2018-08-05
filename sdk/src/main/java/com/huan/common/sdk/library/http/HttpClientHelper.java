@@ -1,4 +1,4 @@
-package com.huan.common.sdk.api;
+package com.huan.common.sdk.library.http;
 
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;

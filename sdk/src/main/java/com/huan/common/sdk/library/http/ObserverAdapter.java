@@ -1,4 +1,4 @@
-package com.huan.common.sdk.api;
+package com.huan.common.sdk.library.http;
 
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;

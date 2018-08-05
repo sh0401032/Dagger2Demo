@@ -1,7 +1,7 @@
 package com.huan.common.sdk.service;
 
-import com.huan.common.sdk.api.HttpClientHelper;
-import com.huan.common.sdk.api.HttpResultFunc;
+import com.huan.common.sdk.library.http.HttpClientHelper;
+import com.huan.common.sdk.library.http.HttpResultFunc;
 import com.huan.common.sdk.api.base.bean.HomeTab;
 import com.huan.common.sdk.api.base.BaseApiService;
 

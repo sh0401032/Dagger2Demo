@@ -1,4 +1,4 @@
-package com.huan.common.sdk.api;
+package com.huan.common.sdk.library.http;
 
 import com.google.gson.annotations.SerializedName;
 

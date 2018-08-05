@@ -2,7 +2,7 @@ package com.huan.dagger2demo.zhihu;
 
 import com.huan.dagger2demo.MyApplication;
 import com.huan.dagger2demo.base.BaseView;
-import com.huan.common.sdk.api.ObserverAdapter;
+import com.huan.common.sdk.library.http.ObserverAdapter;
 import com.huan.common.sdk.api.base.bean.HomeTab;
 import com.huan.common.sdk.service.BaseService;
 
