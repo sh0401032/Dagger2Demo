@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.huan.common.sdk.api.wanandroid.bean.Banner;
+import com.huan.common.sdk.library.imageloader.ImageLoader;
 import com.huan.dagger2demo.R;
 
 import java.util.ArrayList;
@@ -50,7 +51,7 @@ public class HomeBannerAdapter extends PagerAdapter {
         ImageView ivBanner = view.findViewById(R.id.iv_banner);
         TextView tvDesc = view.findViewById(R.id.tv_banner);
         tvDesc.setText(bannerList.get(position).getDesc());
-        Glide.with(mContext).load(bannerList.get(position).getImagePath()).into(ivBanner);
+        ImageLoader.with(mContext).load(bannerList.get(position).getImagePath()).into(ivBanner);
         container.addView(view);
         return view;
     }

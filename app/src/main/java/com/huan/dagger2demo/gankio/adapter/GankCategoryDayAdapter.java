@@ -42,7 +42,6 @@ public class GankCategoryDayAdapter extends BaseQuickAdapter<List<GankIoDayItem>
             case "福利":
                 helper.setImageResource(R.id.iv_type_item_title, R.drawable
                         .ic_vector_title_welfare);
-                // Glide.with(mContext).load(item.getUrl()).crossFade().into((ImageView) helper.getView(R.id.iv_item_title));
                 break;
             case "Android":
                 helper.setImageResource(R.id.iv_type_item_title, R.drawable

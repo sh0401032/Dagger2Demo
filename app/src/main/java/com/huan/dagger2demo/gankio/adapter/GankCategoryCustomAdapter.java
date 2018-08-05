@@ -8,6 +8,7 @@ import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.huan.common.sdk.api.gankio.bean.GankIoCustomItem;
+import com.huan.common.sdk.library.imageloader.ImageLoader;
 import com.huan.dagger2demo.R;
 
 import java.util.List;
@@ -48,15 +49,13 @@ public class GankCategoryCustomAdapter extends BaseMultiItemQuickAdapter<GankIoC
                 helper.setText(R.id.tv_item_title, item.getDesc());
                 if (item.getImages() != null) {
                     if (item.getImages().size() > 0 && !TextUtils.isEmpty(item.getImages().get(0)))
-                        Glide.with(mContext).load(item.getImages().get(0) + mImageSize)
-                                .asBitmap()
+                        ImageLoader.with(mContext).load(item.getImages().get(0) + mImageSize)
                                 .into((ImageView) helper.getView(R.id.iv_item_image));
                 }
                 break;
             case GankIoCustomItem.GANK_IO_DAY_ITEM_CUSTOM_IMAGE:
-                Glide.with(mContext)
+                ImageLoader.with(mContext)
                         .load(item.getUrl())
-                        .asBitmap()
                         .centerCrop()
                         .placeholder(R.mipmap.img_default_meizi)
                         .into((ImageView) helper.getView(R.id.iv_item_image));

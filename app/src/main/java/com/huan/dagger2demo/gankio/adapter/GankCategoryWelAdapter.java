@@ -7,6 +7,7 @@ import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.huan.common.sdk.api.gankio.bean.GankIoWelfareItem;
+import com.huan.common.sdk.library.imageloader.ImageLoader;
 import com.huan.dagger2demo.R;
 
 import java.util.List;
@@ -22,9 +23,8 @@ public class GankCategoryWelAdapter extends BaseQuickAdapter<GankIoWelfareItem, 
 
     @Override
     protected void convert(BaseViewHolder helper, GankIoWelfareItem item) {
-        Glide.with(mContext)
+        ImageLoader.with(mContext)
                 .load(item.getUrl())
-                .crossFade(500)
                 .placeholder(R.mipmap.img_default_meizi)
                 .into((ImageView) helper.getView(R.id.iv_item_image));
     }

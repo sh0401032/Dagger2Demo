@@ -1,5 +1,6 @@
 package com.huan.dagger2demo;
 
+import com.huan.common.sdk.library.imageloader.ImageLoader;
 import com.huan.dagger2demo.di.DaggerAppComponent;
 
 import dagger.android.AndroidInjector;
@@ -19,6 +20,7 @@ public class MyApplication extends DaggerApplication {
         super.onCreate();
 
         Timber.plant(new Timber.DebugTree());
+        ImageLoader.init(this);
     }
 
     @Override

@@ -44,8 +44,6 @@ dependencies {
     compile dependence.butterknife
     annotationProcessor dependence.butterknifeCompiler
 
-    compile dependence.glide
-    compile dependence.glideOkhttp
-    compile dependence.glideTransformations
+
 
 }

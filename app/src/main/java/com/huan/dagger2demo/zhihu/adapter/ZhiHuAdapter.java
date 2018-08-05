@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import com.huan.common.sdk.library.imageloader.ImageLoader;
 import com.huan.dagger2demo.R;
 import com.huan.common.sdk.api.zhihu.bean.ZhiHuDailyItem;
 
@@ -34,7 +35,7 @@ public class ZhiHuAdapter extends BaseQuickAdapter<ZhiHuDailyItem, BaseViewHolde
         helper.setText(R.id.tv_item_title, item.getTitle());
         String[] images = item.getImages();
         if (images != null && images.length > 0) {
-            Glide.with(mContext).load(item.getImages()[0]).crossFade().into((ImageView) helper.getView(R.id.iv_item_image));
+            ImageLoader.with(mContext).load(item.getImages()[0]).into((ImageView) helper.getView(R.id.iv_item_image));
         }
 
     }

@@ -36,6 +36,12 @@ dependencies {
     compile dependence.gson
     compile dependence.converterGson
 
+    compile dependence.picasso
+
+    compile dependence.glide
+    compile dependence.glideOkhttp
+    compile dependence.glideTransformations
+
     compile dependence.baseRecycleViewAdapterHelper
 
 }

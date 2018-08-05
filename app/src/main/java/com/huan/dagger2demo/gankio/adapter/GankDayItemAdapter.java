@@ -7,6 +7,7 @@ import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.huan.common.sdk.api.gankio.bean.GankIoDayItem;
+import com.huan.common.sdk.library.imageloader.ImageLoader;
 import com.huan.dagger2demo.R;
 
 import java.util.List;
@@ -41,7 +42,7 @@ public class GankDayItemAdapter extends BaseQuickAdapter<GankIoDayItem, BaseView
         helper.setText(R.id.tv_item_title, item.getDesc());
         switch (item.getType()) {
             case "福利":
-                Glide.with(mContext).load(item.getUrl()).crossFade().into((ImageView) helper.getView(R.id.iv_item_title));
+                ImageLoader.with(mContext).load(item.getUrl()).into((ImageView) helper.getView(R.id.iv_item_title));
                 break;
             case "Android":
                 helper.setImageResource(R.id.iv_item_title, mResAndroid[0]);
